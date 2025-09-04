@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    /** TS 엄격 활성화 */
+    "strict": true,
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "importHelpers": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "skipLibCheck": true,
+    "types": ["node", "vite/client", "quasar"],
+    /** baseUrl은 컴파일러에게 모듈을 찾을 위치를 알려주는데 사용. 이는 비상대 모듈을 사용할 때 구성되어야 함. */
+    "baseUrl": ".",
+    /** 비상대 모듈 가져오기를 위한 경로 매핑 구성, baseUrl 구성을 기반으로 하는 경로 계산 */
+    "paths": {
+      "@/*": ["src/*"],
+      "@views/*": ["src/views/*"],
+      "@popups/*": ["src/popups/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@utils/*": ["src/config/utils/*"],
+      "@images/*": ["src/assets/images/*"],
+      "@stores/*": ["src/stores/*"],
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"]
+    }
+  },
+  "vueCompilerOptions": {
+    // 이 부분을 추가합니다.
+    "globalTypesPath": "./.vue/global-types.d.ts" // 원하는 경로 지정
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "types/**/*.d.ts",
+    "vite.config.ts"
+  ],
+  /** 기본적으로 컴파일러에서 제외되는 컴파일된 파일 */
+  "exclude": ["node_modules", "dist", ".yarn"]
+}

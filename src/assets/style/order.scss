@@ -1,0 +1,23 @@
+.order-container {
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #F5F5F5;
+  margin: 20px;
+  padding: 24px;
+
+  & .order-header {
+    font-weight: 500;
+    font-size: 1.5em;
+  }
+
+  & .order-item {
+    margin: 0 auto;
+    width: 800px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border-bottom: 1px solid #D3D3D3;
+    border-right: 1px solid #D3D3D3;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
