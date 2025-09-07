@@ -33,6 +33,10 @@
       :items="resultCompare.items"
     />
     <!-- 총평 -->
+    <CardContainer 
+      :title="conclusion.title"
+      :items="conclusion.items"
+    />
   </div>
 </template>
 <script setup lang="ts">
@@ -1883,6 +1887,66 @@ export const useLangTranStore = defineStore('langTran', () => {
   />
 </template>`
             
+        }
+      ],
+    },
+  ]
+})
+
+const conclusion = ref({
+  title: '🏁 이전 차이 비교 (비교 가능한 부문만)',
+  items: [
+    { 
+      headerContents: 'BUILD 시간 비교', 
+      haveContents: true,
+      asisContents: [
+        { 
+          laguageType: 'image',
+          description: '4분 정도 걸린걸 확인할 수 있습니다.',
+          contents: new URL('@/assets/images/compare/BUILDTIME_CLI.png', import.meta.url).href
+        }
+      ],
+      tobeContents: [
+        { 
+          laguageType: 'image',
+          description: '1분 28초로 이전보다 2.7배 정도 빨라진걸 알 수 있습니다.',
+          contents: new URL('@/assets/images/compare/BUILDTIME_VITE.png', import.meta.url).href
+        }
+      ],
+    },
+    { 
+      headerContents: '런타임 시간 비교', 
+      haveContents: true,
+      asisContents: [
+        { 
+          laguageType: 'image',
+          description: '3분 16초 정도 걸린걸 확인할 수 있습니다.',
+          contents: new URL('@/assets/images/compare/RUNTIME_CLI.png', import.meta.url).href
+        }
+      ],
+      tobeContents: [
+        { 
+          laguageType: 'image',
+          description: '22초로 이전보다 8.9배 정도 빨라진걸 확인할 수 있습니다.',
+          contents: new URL('@/assets/images/compare/RUNTIME_VITE.png', import.meta.url).href
+        }
+      ],
+    },
+    { 
+      headerContents: '런타임 시간 비교', 
+      haveContents: true,
+      asisContents: [
+        { 
+          laguageType: 'image',
+          description: '용량 1.06GB에 파일 폴더 개수가 93,207, 7,606개 인걸 확인 할 수 있습니다.',
+          contents: new URL('@/assets/images/compare/CAPACITY_NPM.png', import.meta.url).href
+        }
+      ],
+      tobeContents: [
+        { 
+          laguageType: 'image',
+          description: '용량은 1.46배 정도 낮아졌으며 파일 개수는 21.49배, 폴더 개수는 17.86배 낮아졌습니다.',
+          contents: new URL('@/assets/images/compare/CAPACITY_YARN.png', import.meta.url).href
         }
       ],
     },

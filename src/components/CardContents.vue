@@ -16,7 +16,8 @@
               v-else
               :src="asis.contents"
               spinner-color="white"
-              style="height: 400px; max-width: 400px"
+              fit="contain"
+              width="100%"
             />
           </template>
         </div>
@@ -39,8 +40,10 @@
               v-else
               :src="tobe.contents"
               spinner-color="white"
-              style="height: 400px; max-width: 400px"
+              fit="contain"
+              width="100%"
             />
+              <!-- style="height: 400px; max-width: 400px" -->
           </template>
         </div>
         <NoContents v-else />
@@ -55,8 +58,8 @@
             v-if="!item.isUrl"
             :src="item.contents"
             spinner-color="white"
-            fit="contain"
             width="100%"
+            fit="contain"
           />
           <picture v-else>
             <!-- AVIF -->
